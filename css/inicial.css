@@ -1,0 +1,75 @@
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --error-color: #ef233c;
+  --success-color: #4cc9f0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--light-color);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: var(--light-color);
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: var(--success-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: var(--accent-color);
+  color: var(--light-color);
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

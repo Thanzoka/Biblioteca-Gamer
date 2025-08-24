@@ -1,0 +1,390 @@
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --error-color: #ef233c;
+  --success-color: #4cc9f0;
+  --warning-color: #f39c12;
+  --info-color: #9b59b6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8fafc;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header h1 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-greeting {
+  font-weight: 500;
+  color: #475569;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+.btn-sair {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-sair:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+.form-novo {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  border: 1px solid #e2e8f0;
+}
+
+.form-novo h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.lists-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.jogo-list {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.jogo-list h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+tr:hover {
+  background-color: #f8fafc;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.action-btn i {
+  font-size: 12px;
+}
+
+.finished-btn {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.finished-btn:hover {
+  background-color: #3aa8d8;
+}
+
+.unknown-btn {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.unknown-btn:hover {
+  background-color: #e67e22;
+}
+
+.continue-btn {
+  background-color: var(--info-color);
+  color: white;
+}
+
+.continue-btn:hover {
+  background-color: #8e44ad;
+}
+
+.return-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.return-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.jogo-date {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.empty-message {
+  color: #64748b;
+  font-style: italic;
+  padding: 15px 0;
+  text-align: center;
+}
+
+/* Modal de Finalização */
+.data-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 350px;
+  max-width: 90%;
+  border: 1px solid #e2e8f0;
+}
+
+.data-popup h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.data-options {
+  margin-bottom: 15px;
+}
+
+.data-options label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.data-options label:hover {
+  background: #f8fafc;
+}
+
+.data-options input[type="radio"] {
+  margin-right: 8px;
+}
+
+.data-field {
+  margin-bottom: 15px;
+}
+
+.data-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.popup-buttons button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.popup-buttons button[type="button"] {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.popup-buttons button[type="submit"] {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.popup-buttons button:hover {
+  transform: translateY(-1px);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .lists-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.jogo-list {
+  animation: fadeIn 0.3s ease-out;
+}
