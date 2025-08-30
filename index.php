@@ -18,6 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['adicionar_jogo'])) {
 
     $stmt = $pdo->prepare("INSERT INTO jogos (nome, dia_comecado, status, usuario_id) VALUES (?, ?, 'jogando', ?)");
     $stmt->execute([$nome, $data, $_SESSION['usuario_id']]);
+
+    // Redireciona para evitar duplicação no F5
+    header("Location: index.php");
+    exit();
 }
 
 // Processar finalização do jogo
