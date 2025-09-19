@@ -3,7 +3,7 @@ session_start();
 
 // Se já estiver logado, vai direto para a tela de jogos
 if (isset($_SESSION['usuario_id'])) {
-    header("Location: jogos.php");
+    header("Location: index.php");
     exit();
 }
 ?>

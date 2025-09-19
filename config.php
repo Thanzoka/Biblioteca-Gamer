@@ -23,8 +23,8 @@ function redirect($url)
 
 function verificarLogin()
 {
-    if (!isset($_SESSION['usuario_id'])) {
-        redirect('login.php');
+    if (!isset($_SESSION['usuario_id']) || !isset($_SESSION['usuario'])) {
+        redirect('landing.php');
     }
 }
 

@@ -115,7 +115,9 @@ function formatarData($data)
         <header class="header">
             <h1><i class="fas fa-gamepad"></i> Meus Jogos</h1>
             <div class="user-menu">
-                <span class="user-greeting">Olá, <?= htmlspecialchars($_SESSION['usuario']) ?></span>
+                <span class="user-greeting">
+                    Olá, <?= htmlspecialchars($_SESSION['usuario'] ?? '') ?>
+                </span>
                 <a href="logout.php" class="btn btn-sair">
                     <i class="fas fa-sign-out-alt"></i> Sair
                 </a>
