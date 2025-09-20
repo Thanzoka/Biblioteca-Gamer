@@ -1,13 +1,5 @@
 <?php
-
 session_start();
-
-// Se não houver sessão, manda pro login
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: landing.php");
-    exit();
-}
-
 require 'config.php';
 verificarLogin();
 
@@ -19,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['adicionar_jogo'])) {
     $stmt = $pdo->prepare("INSERT INTO jogos (nome, dia_comecado, status, usuario_id) VALUES (?, ?, 'jogando', ?)");
     $stmt->execute([$nome, $data, $_SESSION['usuario_id']]);
 
-    // Redireciona para evitar duplicação no F5
     header("Location: index.php");
     exit();
 }
@@ -181,7 +172,6 @@ function formatarData($data)
                 document.getElementById('dataPopup').style.display = 'none';
             }
 
-            // Alternar entre data completa e apenas ano
             document.querySelectorAll('input[name="data_option"]').forEach(radio => {
                 radio.addEventListener('change', function() {
                     document.getElementById('fullDateField').style.display =
@@ -220,9 +210,6 @@ function formatarData($data)
                                             <a href="index.php?acao=pendente&id=<?= $jogo['id'] ?>" class="btn action-btn unknown-btn">
                                                 <i class="fas fa-question"></i> Pendente
                                             </a>
-                                            <!-- <a href="index.php?acao=espera&id=<?= $jogo['id'] ?>" class="btn action-btn continue-btn">
-                                                <i class="fas fa-clock"></i> Espera
-                                            </a> -->
                                         </div>
                                     </td>
                                 </tr>
@@ -231,37 +218,6 @@ function formatarData($data)
                     </table>
                 <?php endif; ?>
             </section>
-
-            <!-- Lista Na Espera -->
-            <!-- <section class="jogo-list">
-                <h2><i class="fas fa-clock"></i> Na Espera</h2>
-                <?php if (empty($jogosEspera)): ?>
-                    <p>Nenhum jogo na lista de espera.</p>
-                <?php else: ?>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Jogo</th>
-                                <th>Iniciado em</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($jogosEspera as $jogo): ?>
-                                <tr>
-                                    <td><?= htmlspecialchars($jogo['nome']) ?></td>
-                                    <td class="jogo-date"><?= formatarData($jogo['dia_comecado']) ?></td>
-                                    <td>
-                                        <a href="index.php?acao=retornar&id=<?= $jogo['id'] ?>" class="btn action-btn return-btn">
-                                            <i class="fas fa-undo"></i> Retornar
-                                        </a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                <?php endif; ?>
-            </section> -->
 
             <!-- Lista Pendentes -->
             <section class="jogo-list">
@@ -287,9 +243,6 @@ function formatarData($data)
                                             <a href="index.php?acao=retornar&id=<?= $jogo['id'] ?>" class="btn action-btn return-btn">
                                                 <i class="fas fa-undo"></i> Jogar
                                             </a>
-                                            <!-- <a href="#" onclick="showDataPopup(<?= $jogo['id'] ?>)" class="btn action-btn finished-btn">
-                                                <i class="fas fa-flag-checkered"></i> Finalizar
-                                            </a> -->
                                         </div>
                                     </td>
                                 </tr>
